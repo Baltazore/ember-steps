@@ -1,0 +1,34 @@
+<DocsDemo as |demo|>
+  <demo.example @name="validating-steps-did-transition.hbs">
+    <StepManager as |w|>
+      <w.Step>
+        <input placeholder="Enter password" value={{this.password}}>
+
+        <ControlGroup>
+          <button
+            type="button"
+            onclick={{validate-transition w.transition-to-next with=this.checkPassword}}
+          >
+            Check Password
+          </button>
+        </ControlGroup>
+      </w.Step>
+
+      <w.Step>
+        Great job! You got the password right
+
+        <ControlGroup>
+          <button
+            type="button"
+            {{on "click" (pipe w.transition-to-previous this.reset)}}
+          >
+            Reset
+          </button>
+        </ControlGroup>
+      </w.Step>
+    </StepManager>
+  </demo.example>
+
+  <demo.snippet @name="validating-steps-did-transition.hbs" />
+  <demo.snippet @name="validating-steps-did-transition.js" @label="component.js" />
+</DocsDemo>

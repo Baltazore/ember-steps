@@ -1,0 +1,40 @@
+{
+  "name": "ember-steps",
+  "version": "10.0.1",
+  "description": "Ember addon for declaratively creating wizards, tabbed UIs, and more",
+  "main": "index.js",
+  "homepage": "https://alexlafroscia.github.io/ember-steps",
+  "engines": {
+    "node": "10.* || >= 12"
+  },
+  "dependencies": {
+    "@glimmer/component": "^1.0.0",
+    "@glimmer/tracking": "^1.0.0",
+    "ember-cli-babel": "^7.20.5",
+    "ember-cli-htmlbars": "^6.0.0",
+    "tracked-maps-and-sets": "^3.0.1"
+  },
+  "keywords": [],
+  "repository": "https://github.com/alexlafroscia/ember-steps",
+  "license": "MIT",
+  "author": "Alex LaFroscia <alex@lafroscia.com>",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "ember-addon": {
+    "demoURL": "https://alexlafroscia.github.io/ember-steps"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.{md,json,yml}": "prettier --write"
+  },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "prettier --write CHANGELOG.md"
+    }
+  },
+  "volta": {
+    "extends": "../package.json"
+  }
+}

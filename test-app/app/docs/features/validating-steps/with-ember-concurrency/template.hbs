@@ -1,0 +1,26 @@
+<DocsDemo as |demo|>
+  <demo.example @name="validating-steps-ember-concurrency.hbs">
+    <StepManager as |w|>
+      <w.Step>
+        <input placeholder="Enter password" value={{this.password}}>
+
+        <ControlGroup>
+          <button
+            type="button"
+            disabled={{this.checkPassword.isRunning}}
+            {{on "click" (validate-transition w.transition-to-next with=(perform this.checkPassword))}}
+          >
+            Check Password
+          </button>
+        </ControlGroup>
+      </w.Step>
+
+      <w.Step>
+        Great job! You got the password right
+      </w.Step>
+    </StepManager>
+  </demo.example>
+
+  <demo.snippet @name="validating-steps-ember-concurrency.hbs" />
+  <demo.snippet @name="validating-steps-ember-concurrency.js" @label="component.js" />
+</DocsDemo>

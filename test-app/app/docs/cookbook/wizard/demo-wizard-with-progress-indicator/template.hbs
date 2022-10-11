@@ -1,0 +1,45 @@
+<DocsDemo as |demo|>
+  <demo.example @name="demo-wizard-with-progress-indicator.hbs">
+    <StepManager as |w|>
+      <w.Step>
+        This content is on the first step
+      </w.Step>
+
+      <w.Step>
+        This content is on the second step
+      </w.Step>
+
+      <w.Step>
+        This content is on the third step
+      </w.Step>
+
+      <ControlGroup>
+        <button
+          type="button"
+          disabled={{not w.hasPreviousStep}}
+          {{on "click" w.transition-to-previous}}
+        >
+          Previous
+        </button>
+        <ProgressIndicators>
+          {{#each w.steps as |step|}}
+            <ProgressDot
+              class={{if step.hasNext 'docs-mr-2'}}
+              @isActive={{step.isActive}}
+              {{on "click" (fn w.transition-to step)}}
+            />
+          {{/each}}
+        </ProgressIndicators>
+        <button
+          type="button"
+          disabled={{not w.hasNextStep}}
+          {{on "click" w.transition-to-next}}
+        >
+          Next
+        </button>
+      </ControlGroup>
+    </StepManager>
+  </demo.example>
+
+  <demo.snippet @name="demo-wizard-with-progress-indicator.hbs" />
+</DocsDemo>

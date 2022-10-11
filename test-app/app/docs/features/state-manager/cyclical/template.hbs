@@ -1,0 +1,32 @@
+<DocsDemo as |demo|>
+  <demo.example @name="demo-cyclical-steps-cyclical.hbs">
+    <StepManager @linear={{false}} as |w|>
+      <w.Step>
+        First step has both a "next" and "previous" step
+      </w.Step>
+
+      <w.Step>
+        Second step has both a "next" and "previous" step
+      </w.Step>
+
+      <ControlGroup>
+        <button
+          type="button"
+          disabled={{not w.hasPreviousStep}}
+          {{on "click" w.transition-to-previous}}
+        >
+          Previous
+        </button>
+        <button
+          type="button"
+          disabled={{not w.hasNextStep}}
+          {{on "click" w.transition-to-next}}
+        >
+          Next
+        </button>
+      </ControlGroup>
+    </StepManager>
+  </demo.example>
+
+  <demo.snippet @name="demo-cyclical-steps-cyclical.hbs" />
+</DocsDemo>
