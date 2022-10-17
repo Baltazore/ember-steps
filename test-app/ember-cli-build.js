@@ -12,7 +12,6 @@ module.exports = function (defaults) {
         },
       },
     },
-
     'ember-composable-helpers': {
       only: ['pipe'],
     },

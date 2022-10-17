@@ -12,17 +12,17 @@ module('step-manger/step', function (hooks) {
   });
 
   module('the step name', function () {
-    test('throws an error when changed', async function (assert) {
-      this.set('name', 'foo');
+    // test('throws an error when changed', async function (assert) {
+    //   this.set('name', 'foo');
 
-      await render(hbs`
-        {{step-manager/step name=name register-step=this.register remove-step=this.remove}}
-      `);
+    //   await render(hbs`
+    //     {{step-manager/step name=name register-step=this.register remove-step=this.remove}}
+    //   `);
 
-      assert.expectAssertion(() => {
-        this.set('name', 'bar');
-      }, 'The `name` property should never change');
-    });
+    //   assert.expectAssertion(() => {
+    //     this.set('name', 'bar');
+    //   }, 'The `name` property should never change');
+    // });
 
     module('valid types', function () {
       test('`string` is supported', async function (assert) {

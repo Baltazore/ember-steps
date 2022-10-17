@@ -8,11 +8,19 @@
     "node": "10.* || >= 12"
   },
   "dependencies": {
-    "@glimmer/component": "^1.0.0",
-    "@glimmer/tracking": "^1.0.0",
-    "ember-cli-babel": "^7.20.5",
-    "ember-cli-htmlbars": "^6.0.0",
+    "ember-cli-babel": "^7.26.6",
     "tracked-maps-and-sets": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-ember": "^10.5.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "ember-template-lint": "^3.6.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.2"
   },
   "keywords": [],
   "repository": "https://github.com/alexlafroscia/ember-steps",
